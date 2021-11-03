@@ -1,4 +1,5 @@
 # java-template-engine-webpack-plugin
+[![npm_version](https://img.shields.io/npm/v/java-template-engine-webpack-plugin?color=blue)](https://www.npmjs.com/package/java-template-engine-webpack-plugin)
 
 A plugin extension for [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) that injects code for Java template engines.
 
