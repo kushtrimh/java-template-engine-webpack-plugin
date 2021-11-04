@@ -55,3 +55,4 @@ Adding the plugin for `thymeleaf` in this case, would change the `HTML` as follo
 |`addLeadingSlash`|`Boolean`|`false`|Adds a leading slash to the attribute if its missing. <br /> _static/image.png_ becomes _/static/image.png_|
 |`removeLeadingSlash`|`Boolean`|`false`|Removes a leading slash from the attribute if its present. <br /> _/static/image.png_ becomes _static/image.png_|
 |`removeDotSegments`|`Boolean`|`false`|Removes dot-segments from the attribute. <br /> _../../static/image.png_ becomes _static/image.png_ <br /> _./static/image.png_ becomes _static/image.png_ <br /> _.static/iamges.png_ becomes _static/images.png_|
+|`removeOriginalAttributes`|`Boolean`|`true`|Removes the original `src` and `href` attributes. Only valid when using `thymeleaf` engine.|
