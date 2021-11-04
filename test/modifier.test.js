@@ -24,26 +24,30 @@ test('does not remove leading slash from attribute when its not present', () => 
   expect(modifier.removeLeadingSlash('built/static/img/image.png')).toBe('built/static/img/image.png');
 });
 
-test('remove dot segments of parent directories', () => {
+test('removes dot segments of parent directories', () => {
   expect(modifier.removeDotSegments('../../../static/image.png')).toBe('static/image.png');
   expect(modifier.removeDotSegments('../static/image.png')).toBe('static/image.png');
   expect(modifier.removeDotSegments('static/image.png')).toBe('static/image.png');
 });
 
-test('remove dot segments of current directory', () => {
+test('removes dot segments of current directory', () => {
   expect(modifier.removeDotSegments('./././static/image.png')).toBe('static/image.png');
   expect(modifier.removeDotSegments('./static/image.png')).toBe('static/image.png');
   expect(modifier.removeDotSegments('static/image.png')).toBe('static/image.png');
 });
 
-test('remove dot segments containing current and parent directory', () => {
+test('removes dot segments containing current and parent directory', () => {
   expect(modifier.removeDotSegments('./../../static/image.png')).toBe('static/image.png');
   expect(modifier.removeDotSegments('./../static/image.png')).toBe('static/image.png');
   expect(modifier.removeDotSegments('static/image.png')).toBe('static/image.png');
 });
 
-test('remove dot segments containing dot at the attribute start', () => {
+test('removes dot segments containing dot at the attribute start', () => {
   expect(modifier.removeDotSegments('.static/image.png')).toBe('static/image.png');
   expect(modifier.removeDotSegments('./static/image.png')).toBe('static/image.png');
   expect(modifier.removeDotSegments('static/image.png')).toBe('static/image.png');
+});
+
+test('returns empty string when empty string provided when removing dot segments', () => {
+  expect(modifier.removeDotSegments('')).toBe('');
 });
