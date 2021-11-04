@@ -2,7 +2,7 @@ const dotSegmentsRegex = /^(?:\.\.\/|\.\/|\.)*/g;
 
 function removeDotSegments(attribute) {
   if (attribute) {
-    return attribute.replaceAll(dotSegmentsRegex, '');
+    return attribute.replace(dotSegmentsRegex, '');
   }
   return attribute;
 }
