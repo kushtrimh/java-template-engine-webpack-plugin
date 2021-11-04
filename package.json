@@ -4,7 +4,7 @@
   "description": "Plugin extension for html-webpack-plugin, that injects code for Java template engines",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/kushtrimh/java-template-engine-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/kushtrimh/java-template-engine-webpack-plugin#readme"
+  "homepage": "https://github.com/kushtrimh/java-template-engine-webpack-plugin#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
 }

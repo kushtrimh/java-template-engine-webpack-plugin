@@ -1,14 +1,15 @@
-const engines = require('./engines/engines')
+const injector = require('./injector');
 
 const supportedEngines = ['thymeleaf'];
 
 class JavaTemplateEngineWebpackPlugin {
 
   constructor(plugin, options) {
-    this.options = options || {};
-    if (supportedEngines.includes(this.options.engine)) {
-      this.templateEngine = new engines[this.options.engine];
-    }
+    this.options = Object.assign({
+      removeLeadingSlash: false,
+      addLeadingSlash: false,
+      removeDotSegments: false
+    }, options);
     this.htmlWebpackPlugin = plugin;
   }
   
@@ -17,9 +18,8 @@ class JavaTemplateEngineWebpackPlugin {
       this.htmlWebpackPlugin.getHooks(compilation).alterAssetTags.tapAsync(
         'JavaTemplateEngineWebpackPlugin',
         (data, cb) => {
-          if (this.templateEngine) {
-            this.templateEngine.applyForScripts(data.assetTags.scripts);
-            this.templateEngine.applyForStyles(data.assetTags.styles);
+          if (supportedEngines.includes(this.options.engine)) {
+            injector.inject(data, this.options);
           }
           cb(null, data);
         }
