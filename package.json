@@ -1,6 +1,6 @@
 {
   "name": "java-template-engine-webpack-plugin",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Plugin extension for html-webpack-plugin, that injects code for Java template engines",
   "main": "index.js",
   "scripts": {
