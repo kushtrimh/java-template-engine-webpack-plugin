@@ -8,7 +8,8 @@ class JavaTemplateEngineWebpackPlugin {
     this.options = Object.assign({
       removeLeadingSlash: false,
       addLeadingSlash: false,
-      removeDotSegments: false
+      removeDotSegments: false,
+      removeOriginalAttributes: true,
     }, options);
     this.htmlWebpackPlugin = plugin;
   }
