@@ -31,9 +31,28 @@ module.exports = {
 }
 ```
 
-Adding the plugin for `thymeleaf` in this case, would change the `HTML` as follows
+---
 
-```HTML
+The example below shows how the output of `index.html` is changed after adding the plugin with `thymeleaf` as the engine.
+
+*Before*
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Webpack App</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
+```
+
+*After*
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -47,6 +66,8 @@ Adding the plugin for `thymeleaf` in this case, would change the `HTML` as follo
   </body>
 </html>
 ```
+
+---
 
 ### Options
 |Name|Type|Default|Description|
