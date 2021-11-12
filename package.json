@@ -13,9 +13,9 @@
   "keywords": [
     "webpack",
     "java",
-    "javascript",
     "template-engine",
-    "plugin"
+    "plugin",
+    "thymeleaf"
   ],
   "author": "Kushtrim Hajrizi <kushtrimh@kushtrimh.com> (https://github.com/kushtrimh)",
   "license": "MIT",
