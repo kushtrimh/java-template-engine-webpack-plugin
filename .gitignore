@@ -1,5 +1,6 @@
 /node_modules/
 /dist/
+/test/dist/
 /coverage/
 npm-debug.*.log
 npm-debug.log.*
