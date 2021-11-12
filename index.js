@@ -29,4 +29,4 @@ class JavaTemplateEngineWebpackPlugin {
   }
 }
 
-module.exports = JavaTemplateEngineWebpackPlugin
+module.exports = JavaTemplateEngineWebpackPlugin;
