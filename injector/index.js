@@ -17,6 +17,13 @@ function inject(data, options) {
   engine.apply(data.assetTags, options);
 }
 
+function injectIntoHTML(data, options) {
+  const engine = new engines[options.engine]();
+  if (typeof engine.applyForHTML === 'function') {
+    data.html = engine.applyForHTML(data.html, options);
+  }
+}
+
 function modifyScriptsAndLinks(data, modifier) {
   data.assetTags.scripts.forEach(script => {
     script.attributes.src = modifier(script.attributes.src);
@@ -27,5 +34,6 @@ function modifyScriptsAndLinks(data, modifier) {
 }
 
 module.exports = {
-  inject: inject
+  inject: inject,
+  injectIntoHTML: injectIntoHTML
 };

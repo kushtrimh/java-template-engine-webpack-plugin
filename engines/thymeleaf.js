@@ -17,4 +17,4 @@ class ThymeleafEngine {
   }
 }
 
-module.exports = ThymeleafEngine
+module.exports = ThymeleafEngine;
