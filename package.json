@@ -15,7 +15,8 @@
     "java",
     "template-engine",
     "plugin",
-    "thymeleaf"
+    "thymeleaf",
+    "jsp"
   ],
   "author": "Kushtrim Hajrizi <kushtrimh@kushtrimh.com> (https://github.com/kushtrimh)",
   "license": "MIT",
