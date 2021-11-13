@@ -1,6 +1,6 @@
 const injector = require('./injector');
 
-const supportedEngines = ['thymeleaf'];
+const supportedEngines = ['thymeleaf', 'jsp'];
 
 class JavaTemplateEngineWebpackPlugin {
 
@@ -10,6 +10,7 @@ class JavaTemplateEngineWebpackPlugin {
       addLeadingSlash: false,
       removeDotSegments: false,
       removeOriginalAttributes: true,
+      useJSTL: true
     }, options);
     this.htmlWebpackPlugin = plugin;
   }
@@ -21,6 +22,15 @@ class JavaTemplateEngineWebpackPlugin {
         (data, cb) => {
           if (supportedEngines.includes(this.options.engine)) {
             injector.inject(data, this.options);
+          }
+          cb(null, data);
+        }
+      )
+      this.htmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(
+        'JavaTemplateEngineWebpackPlugin',
+        (data, cb) => {
+          if (supportedEngines.includes(this.options.engine)) {
+            injector.injectIntoHTML(data, this.options);
           }
           cb(null, data);
         }

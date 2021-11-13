@@ -7,6 +7,7 @@ A plugin extension for [html-webpack-plugin](https://github.com/jantimon/html-we
 ## Supported engines
 
 - Thymeleaf (`thymeleaf`)
+- Java Server Pages (`jsp`)
 
 ## Installation
 
@@ -77,3 +78,4 @@ The example below shows how the output of `index.html` is changed after adding t
 |`removeLeadingSlash`|`Boolean`|`false`|Removes a leading slash from the attribute if its present. <br /> _/static/image.png_ becomes _static/image.png_|
 |`removeDotSegments`|`Boolean`|`false`|Removes dot-segments from the attribute. <br /> _../../static/image.png_ becomes _static/image.png_ <br /> _./static/image.png_ becomes _static/image.png_ <br /> _.static/image.png_ becomes _static/image.png_|
 |`removeOriginalAttributes`|`Boolean`|`true`|Removes the original `src` and `href` attributes. Only valid when using `thymeleaf` engine.|
+|`useJSTL`|`Boolean`|`true`|Uses the `JSTL` `<c:url>` tag when modifying attributes. Only valid when using `jsp` engine.|

@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const JavaTemplateEngineWebpackPlugin = require('../../index');
 
-function webpackConfig(outputFilename, engine) {
+function webpackConfig(outputFilename, options) {
   return {
     mode: 'production',
     entry: path.resolve(__dirname, 'index.js'),
@@ -28,7 +28,7 @@ function webpackConfig(outputFilename, engine) {
         filename: outputFilename,
         template: path.resolve(__dirname, 'index.html')
       }),
-      new JavaTemplateEngineWebpackPlugin(HtmlWebpackPlugin, { engine: 'thymeleaf' })
+      new JavaTemplateEngineWebpackPlugin(HtmlWebpackPlugin, options)
     ]
   };
 }
